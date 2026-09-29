@@ -1,0 +1,12 @@
+# Ignore the heavy dependencies folder
+node_modules/
+
+# Ignore the file where we store the "stolen" credentials
+captured_data.txt
+
+# Ignore environment files (if you use them later)
+.env
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db

