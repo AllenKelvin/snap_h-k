@@ -2,21 +2,27 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
+const express = require('express');
+const path = require('path');
 
 const app = express();
 
 // IMPORTANT: Render assigns a port via environment variables. 
 // We use 3000 as a fallback for local testing.
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 // Middleware
+app.use(express.static(__dirname));
 app.use(cors()); // Allows your Vercel frontend to talk to this backend
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // 1. Health Check Route (To test if the server is alive)
 app.get('/', (req, res) => {
-    res.send('Backend Server is Running! 🚀');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // 2. The Capture Endpoint
